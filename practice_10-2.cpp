@@ -6,6 +6,7 @@ struct X{
     vector<double> vec;
     X() = default;
     X(const X& x): vec(x.vec){}
+    X(X&& x) noexcept: vec(move(x.vec)){} //ムーブコンストラクタを定義してムーブする
 };
 
 X f(){
